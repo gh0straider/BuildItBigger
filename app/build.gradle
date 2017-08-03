@@ -11,6 +11,15 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    productFlavors {
+        free {
+            applicationId "com.gh0straider.builditbigger.free"
+        }
+        paid {
+            applicationId "com.gh0straider.builditbigger"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -21,10 +30,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    // Added for AdMob
+    freeCompile 'com.google.android.gms:play-services-ads:11.0.4'
+    // Added for joke_display
+    compile project(':jokedisplay')
+    // Added for google cloud endpoint & backend
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    // Added for Testing Support Library
+    androidTestCompile('com.android.support.test:runner:0.4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
 }
