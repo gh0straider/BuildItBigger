@@ -15,13 +15,12 @@ import com.joke.JokeActivity;
 
 
 /**
- * A placeholder fragment containing a simple view.
+ * A placeholder fragment
  */
 public class MainActivityFragment extends Fragment implements OnTaskCompleted{
     Button mJokeButton;
     ProgressBar mProgressBar;
     String mResult;
-    Boolean mAdsOnScreen;
 
     public MainActivityFragment() {
     }
@@ -67,13 +66,7 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted{
         launchActivity();
     }
 
-    // Call three times :
-    // - when the user click (-> progressBar or nothing)
-    // - when the data is loaded (-> intent or nothing)
-    // - when the ads is closed (-> intent or progressBar)
     public void launchActivity() {
-        // No ads currently displayed
-        if (!mAdsOnScreen){
             // Data is ready
             if (mResult != null) {
                 Intent intent = new Intent(getActivity(), JokeActivity.class);
@@ -85,5 +78,4 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted{
                 mProgressBar.setVisibility(View.VISIBLE);
             }
         }
-    }
 }
