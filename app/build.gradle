@@ -17,7 +17,7 @@ android {
             applicationId "com.gh0straider.builditbigger.free"
         }
         paid {
-            applicationId "com.gh0straider.builditbigger"
+            applicationId "com.gh0straider.builditbigger.paid"
         }
     }
     buildTypes {
