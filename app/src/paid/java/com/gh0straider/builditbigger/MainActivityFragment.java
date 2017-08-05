@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.gh0straider.builditbigger;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import com.joke.JokeActivity;
 
 
 /**
- * A placeholder fragment containing a simple view.
+ * A placeholder fragment
  */
 public class MainActivityFragment extends Fragment implements OnTaskCompleted{
     Button mJokeButton;
