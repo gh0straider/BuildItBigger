@@ -17,7 +17,7 @@ import com.joke.JokeActivity;
 
 
 /**
- * A placeholder fragment containing a simple view.
+ * A placeholder fragment
  */
 public class MainActivityFragment extends Fragment implements OnTaskCompleted{
     InterstitialAd mInterstitialAd;
@@ -47,7 +47,7 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted{
                 .build();
         mAdView.loadAd(adRequest);
 
-        // Instantiate the InterstitialAd object
+        // Instantiate the InterstitialAd
         mInterstitialAd = new InterstitialAd(getContext());
         mInterstitialAd.setAdUnitId("ca-app-pub-7342560347499509/2790565866");
 
@@ -94,10 +94,6 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted{
         launchActivity();
     }
 
-    // Call three times :
-    // - when the user click (-> progressBar or nothing)
-    // - when the data is loaded (-> intent or nothing)
-    // - when the ads is closed (-> intent or progressBar)
     public void launchActivity() {
         // No ads currently displayed
         if (!mAdsOnScreen){
@@ -107,7 +103,7 @@ public class MainActivityFragment extends Fragment implements OnTaskCompleted{
                 intent.putExtra(JokeActivity.JOKE_KEY, mResult);
                 mProgressBar.setVisibility(View.GONE);
                 startActivity(intent);
-                // AsyncTask is not finish
+                // AsyncTask is not finished
             } else {
                 mProgressBar.setVisibility(View.VISIBLE);
             }
