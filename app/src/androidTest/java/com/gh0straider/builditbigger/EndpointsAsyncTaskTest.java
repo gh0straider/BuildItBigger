@@ -21,7 +21,7 @@ public class EndpointsAsyncTaskTest {
     public void testDoInBackground() throws Exception{
         try {
             MainActivity mainActivity = new MainActivity();
-            EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(mainActivity);
+            EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask((OnTaskCompleted) mainActivity);
             endpointsAsyncTask.execute();
             String result = endpointsAsyncTask.get(30, TimeUnit.SECONDS);
 
